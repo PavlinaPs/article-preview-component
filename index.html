@@ -20,48 +20,39 @@
 </head>
 <body>
 
-  <main class="card">
+  <main class="article-preview">
 
-    <div class="card__image"></div>
+    <div class="article-preview__image"></div>
 
-    <div class="card__text-container">
-      <h1 class="card__heading">
-        Shift the overall look and feel by adding these wonderful touches to furniture in your home
-      </h1>
-      <p class="card__text">
-        Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.
-      </p>
-    </div>
+    <!-- text content -->
+    <div class="article-preview__text-content">
 
+      <div class="article-preview__text-container">
+        <h1 class="article-preview__heading">
+          Shift the overall look and feel by adding these wonderful touches to furniture in your home
+        </h1>
+        <p class="article-preview__text">
+          Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.
+        </p>
+      </div>
 
-    <!-- bottom information -->
-    <div class="info" data-visible="false">
-
-      <div class="info__container">
+      <!-- bottom information -->
+      <div class="article-preview__info-container">
 
         <div> <!-- avatar container -->
-          <img class="info__avatar" src="./images/avatar-michelle.jpg" alt="">
+          <img class="article-preview__avatar" src="./images/avatar-michelle.jpg" alt="">
         </div>
 
         <div> <!-- name + date container -->
-          <p class="info__name">Michelle Appleton</p>
-          <p class="info__date">28 Jun 2020</p>
+          <p class="article-preview__author">Michelle Appleton</p>
+          <p class="article-preview__date">28 Jun 2020</p>
         </div>
 
       </div>  
 
-      <button class="info__share-button info__share-button--card" aria-label="share-button-toggle" aria-pressed="false">
-        <img src="./images/icon-share.svg" alt="">
-      </button>
-
-    </div>
-
-
-    <!-- bottom information - share overlap / tooltip -->
-    <div class="info__share__navigation" aria-label="share-navigation" data-visible="true">
-
-      <ul class="info__share__container">
-        <li class="info__share__label">Share</li>
+      <!-- share overlap / tooltip -->
+      <ul class="share__navigation active" aria-label="share-navigation">
+        <li class="share__label">Share</li>
         <li>
           <a href="#"><img src="./images/icon-facebook.svg" alt="facebook icon"></a>
         </li>
@@ -73,15 +64,15 @@
         </li>
       </ul>
 
-
-      <button class="info__share-button info__share-button--overlap" aria-label="share-button-toggle" aria-pressed="true">
+      <button class="share-button active" aria-label="share-button-toggle" aria-pressed="true">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
           <path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
         </svg>
       </button>
 
-    </div>
 
+
+    </div>
   </main>
 
   <footer class="attribution">
