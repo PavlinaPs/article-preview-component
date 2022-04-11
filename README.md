@@ -16,8 +16,6 @@ This is a solution to the [Article preview component challenge on Frontend Mento
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -29,15 +27,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+| Desktop layout |
+|:--:|
+![Desktop layout](./screenshots/screenshot-desktop.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+| Mobile layout |
+|:--:|
+![Mobile layout](./screenshots/screenshot-mobile.jpg)
 
 ### Links
 
@@ -54,67 +50,69 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-.card__image {
+I learned a lot again. Such a small component, so many topics!
 
-    background-position: 50% -1.6rem;
-    background-size: 100%;
-
+- #### Placing the main image according to design
+I decided to place the image as a backround, because it is easier to manipulate it, so it looks like on the design. I don't know how I would accomplish it, if I inserted the image as an html element.
+```css
+.article-preview__image {
+  ...
+  background-size: 100%;
+  background-position: 50% -1.6rem;
+  ...
 }
-https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
-background-position
 
-It's called a Tooltip!
+@media (min-width: 50em) {
+    .article-preview__image {
+      ...
+      background-size: 123%;
+      background-position: left top;
+    }
+}
+```
+Here is the link on MDN: [Background-position](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
 
-To see how you can add code snippets, see below:
 
+- #### The share button
+I styled the button so it always stays at the top with z-index of 10. The trouble is that if made exactly as per design, either the component's height or the button *jump* when clicked. I chose the button jumping because I had to chose one, but in real life I would talk to the designer, that I am not happy with it this way.
+
+- #### Changing the arrow svg color when active
+I did a research on this, changing svg's color seemed quite complicated. But when I opened the file in text editor and saw the fill property I tried to change it with css and it works:
 ```html
-<h1>Some HTML code I'm proud of</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+          <path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
+        </svg>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+.share-button.active > svg > path {
+    fill: var(--clr-light-grayish-blue);
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+- #### Social icons
+I made the social icons as dummy links in an unordered list. I think this is the correct way. I also added aria-labels because there is nothing to read for screen readers.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+
+- #### It's called a Tooltip!
+I watched a few tutorials how to make a tooltip, then I just positioned a div absolutely and turned another 45deg as an arrow with a pseudo-element. It opens and closes with JavaScript.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I didn't include any transitions because I didn't like any I was able to create. I need to account for transitions before styling components and learn more about them. And same for the accessibility features.
 
 ### Useful resources
 
-- [CSS Triangles](https://blog.webdevsimplified.com/2020-03/css-triangles/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [How To Make Tooltips With Only CSS](https://youtu.be/ujlpzTyJp-M) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [CSS Triangles](https://blog.webdevsimplified.com/2020-03/css-triangles/) - Web Dev Simplified Blog
+- [How To Make Tooltips With Only CSS](https://youtu.be/ujlpzTyJp-M) - Web Dev Simplified's YouTube tutorial
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- GitHub - [PavlinaPs](https://github.com/PavlinaPs)
+- Frontend Mentor - [@PavlinaPs](https://www.frontendmentor.io/profile/PavlinaPs)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+It is great that I can solve Frontend Mentor's challenges. They are all very useful for me. And Web Dev Simplified is great too. Thank you!
