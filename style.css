@@ -37,6 +37,7 @@ html {
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -247,8 +248,7 @@ body {
 
 /*** footer ***/
 .attribution {
-    position: absolute;
-    bottom: 1.5rem;
+    margin-top: 5rem;
     width: 100%;
     font-size: 1rem;
     color: var(--clr-very-dark-grayish-blue);
@@ -256,4 +256,11 @@ body {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 50em) {
+    .attribution {
+        position: absolute;
+        bottom: 1.5rem;
+    }
 }
